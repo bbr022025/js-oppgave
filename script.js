@@ -144,6 +144,7 @@ const diceRoller = (num, side) => {
   const results = [];
   for (let i = 0; i < num; i++) {
     const roll = Math.ceil(Math.random() * side);
+    // Mulig jeg kan få null med dette hvis Math.random gir 0.
     results.push(roll);
   }
   return results;
@@ -176,7 +177,15 @@ skal returnere:
 
 ******************************************************************************/
 
-// Skriv koden for oppgave 3 her
+const stringCleaner = (arr) => {
+  const cleaned = [];
+  for (string of arr) {
+    const cleanedString = string.trim().toLowerCase();
+    cleaned.push(cleanedString);
+  }
+
+  return cleaned.join(" ");
+};
 
 /******************************************************************************
 4.
@@ -204,8 +213,21 @@ skal returnere "whao is ohe ptino tf ohis?"
 ******************************************************************************/
 
 function doubleSwap(string, charA, charB) {
-  // Skriv koden for oppgave 4 her
+  let swappedString = "";
+  for (letter of string) {
+    if (letter === charA) {
+      swappedString += charB;
+    } else if (letter === charB) {
+      swappedString += charA;
+    } else {
+      swappedString += letter;
+    }
+  }
+  return swappedString;
 }
+
+console.log("Testing doubleSwap");
+doubleSwap("This is a string", "i", "s");
 
 /******************************************************************************
 5.
