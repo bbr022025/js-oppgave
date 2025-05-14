@@ -227,7 +227,7 @@ function doubleSwap(string, charA, charB) {
 }
 
 console.log("Testing doubleSwap");
-doubleSwap("This is a string", "i", "s");
+console.log(doubleSwap("This is a string", "i", "s"));
 
 /******************************************************************************
 5.
